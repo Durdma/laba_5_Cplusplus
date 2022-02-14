@@ -1,4 +1,4 @@
-#define NOMINMAX
+п»ї#define NOMINMAX
 #define _CRTDBG_MAP_ALLOC
 
 #include <Windows.h>
@@ -18,7 +18,7 @@
 
 using namespace std;
 
-//ВВод массива
+//Р’Р’РѕРґ РјР°СЃСЃРёРІР°
 
 float* f_input_arr(int& len, int& count)
 {
@@ -27,16 +27,16 @@ float* f_input_arr(int& len, int& count)
 	bool check = true;
 	float* arr_of_numbs = new float[len];
 
-	cout << "Введите массив вещественных чисел: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РјР°СЃСЃРёРІ РІРµС‰РµСЃС‚РІРµРЅРЅС‹С… С‡РёСЃРµР»: " << endl;
 
 	
 
-	//Цикл ввода массива
+	//Р¦РёРєР» РІРІРѕРґР° РјР°СЃСЃРёРІР°
 
 	do
 	{
 
-		if (count >= len)		//Выделение памяти для динамического массива
+		if (count >= len)		//Р’С‹РґРµР»РµРЅРёРµ РїР°РјСЏС‚Рё РґР»СЏ РґРёРЅР°РјРёС‡РµСЃРєРѕРіРѕ РјР°СЃСЃРёРІР°
 		{
 
 			len = 2 * len;
@@ -65,21 +65,21 @@ float* f_input_arr(int& len, int& count)
 
 		}
 
-		cout << count << "й элемент: ";
+		cout << count << "Р№ СЌР»РµРјРµРЅС‚: ";
 		cin >> numb;
 		cout << endl;
 
-		while (!cin.good() || cin.peek() != '\n')		//Проверка корректности введнных данных
+		while (!cin.good() || cin.peek() != '\n')		//РџСЂРѕРІРµСЂРєР° РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚Рё РІРІРµРґРЅРЅС‹С… РґР°РЅРЅС‹С…
 		{
 
-			cerr << "Некорректный ввод данных!!!" << endl;
-			cout << "Вводимый элемент должен быть числом. Дробная часть должна быть отделена точкой!!!" << endl;
-			cout << "Повторите ввод!!!" << endl;
+			cerr << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ РґР°РЅРЅС‹С…!!!" << endl;
+			cout << "Р’РІРѕРґРёРјС‹Р№ СЌР»РµРјРµРЅС‚ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ С‡РёСЃР»РѕРј. Р”СЂРѕР±РЅР°СЏ С‡Р°СЃС‚СЊ РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РѕС‚РґРµР»РµРЅР° С‚РѕС‡РєРѕР№!!!" << endl;
+			cout << "РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ!!!" << endl;
 
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-			cout << count << "й элемент: ";
+			cout << count << "Р№ СЌР»РµРјРµРЅС‚: ";
 			cin >> numb;
 			cout << endl;
 
@@ -87,18 +87,18 @@ float* f_input_arr(int& len, int& count)
 
 		arr_of_numbs[count] = numb;
 
-		cout << "Продолжить ввод элементов? (1 - да / 0 - нет)" << endl;
+		cout << "РџСЂРѕРґРѕР»Р¶РёС‚СЊ РІРІРѕРґ СЌР»РµРјРµРЅС‚РѕРІ? (1 - РґР° / 0 - РЅРµС‚)" << endl;
 		cin >> check;
 		cout << endl;
 
-		while (!cin.good() || cin.peek() != '\n')		//Проверка корректности введенного флага
+		while (!cin.good() || cin.peek() != '\n')		//РџСЂРѕРІРµСЂРєР° РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚Рё РІРІРµРґРµРЅРЅРѕРіРѕ С„Р»Р°РіР°
 		{
 
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-			cerr << "Неккоректный ввод!!!" << endl;
-			cout << "Введите 1 - для продолжения ввода элементов, либо 0 - для завершения ввода!!!" << endl;
+			cerr << "РќРµРєРєРѕСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ!!!" << endl;
+			cout << "Р’РІРµРґРёС‚Рµ 1 - РґР»СЏ РїСЂРѕРґРѕР»Р¶РµРЅРёСЏ РІРІРѕРґР° СЌР»РµРјРµРЅС‚РѕРІ, Р»РёР±Рѕ 0 - РґР»СЏ Р·Р°РІРµСЂС€РµРЅРёСЏ РІРІРѕРґР°!!!" << endl;
 			cin >> check;
 			cout << endl;
 
@@ -106,9 +106,9 @@ float* f_input_arr(int& len, int& count)
 
 		count++;
 
-	} while (check == true);		//Условие выхода из цикла ввода элементов
+	} while (check == true);		//РЈСЃР»РѕРІРёРµ РІС‹С…РѕРґР° РёР· С†РёРєР»Р° РІРІРѕРґР° СЌР»РµРјРµРЅС‚РѕРІ
 
-	if (count < len)				//Обрезание динамического массива
+	if (count < len)				//РћР±СЂРµР·Р°РЅРёРµ РґРёРЅР°РјРёС‡РµСЃРєРѕРіРѕ РјР°СЃСЃРёРІР°
 	{
 
 		float* temp_arr = new float[count];
@@ -139,18 +139,18 @@ float* f_input_arr(int& len, int& count)
 
 }
 
-//Вывод в консоль введенного массива
+//Р’С‹РІРѕРґ РІ РєРѕРЅСЃРѕР»СЊ РІРІРµРґРµРЅРЅРѕРіРѕ РјР°СЃСЃРёРІР°
 
 void f_out_arr(const float* arr_of_numbs, const int& arr_count)
 {
 
-	cout << "Введнный массив данных:" << endl;
+	cout << "Р’РІРµРґРЅРЅС‹Р№ РјР°СЃСЃРёРІ РґР°РЅРЅС‹С…:" << endl;
 	cout << endl;
 
 	for (int i = 0; i < arr_count; i++)
 	{
 
-		cout << i << "й эл.    " << arr_of_numbs[i] << endl;
+		cout << i << "Р№ СЌР».    " << arr_of_numbs[i] << endl;
 
 	}
 
@@ -158,7 +158,7 @@ void f_out_arr(const float* arr_of_numbs, const int& arr_count)
 
 }
 
-//Умножение положительных элементов
+//РЈРјРЅРѕР¶РµРЅРёРµ РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ
 
 double f_positive_multi(const float* arr_of_numbs, int const& len)
 {
@@ -191,7 +191,7 @@ double f_positive_multi(const float* arr_of_numbs, int const& len)
 
 }
 
-//Сумма элементов до минимума массива
+//РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РґРѕ РјРёРЅРёРјСѓРјР° РјР°СЃСЃРёРІР°
 
 double f_sum_until_min(const float* arr_of_numbs, int const& len)
 {
@@ -236,7 +236,7 @@ double f_sum_until_min(const float* arr_of_numbs, int const& len)
 
 }
 
-//Функция сортировки массива
+//Р¤СѓРЅРєС†РёСЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РјР°СЃСЃРёРІР°
 
 void f_sort(float* arr_of_numbs, int const& len)
 {
@@ -262,7 +262,7 @@ void f_sort(float* arr_of_numbs, int const& len)
 
 }
 
-//Функция вывода результатов
+//Р¤СѓРЅРєС†РёСЏ РІС‹РІРѕРґР° СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ
 
 void f_output(const float* arr_of_numbs, const int& arr_count, const double& sum, const double& multiple)
 {
@@ -272,14 +272,14 @@ void f_output(const float* arr_of_numbs, const int& arr_count, const double& sum
 	if (multiple == 0)
 	{
 
-		cout << "Положительных элементов в массиве чисел нет!!! Произведение равно 0." << endl;
+		cout << "РџРѕР»РѕР¶РёС‚РµР»СЊРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ РІ РјР°СЃСЃРёРІРµ С‡РёСЃРµР» РЅРµС‚!!! РџСЂРѕРёР·РІРµРґРµРЅРёРµ СЂР°РІРЅРѕ 0." << endl;
 
 	}
 
 	else
 	{
 
-		cout << "Произведение положительных элементов массива равно: "
+		cout << "РџСЂРѕРёР·РІРµРґРµРЅРёРµ РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° СЂР°РІРЅРѕ: "
 			<< multiple << endl;
 
 	}
@@ -289,26 +289,26 @@ void f_output(const float* arr_of_numbs, const int& arr_count, const double& sum
 	if (sum == 0)
 	{
 
-		cout << "Сумма до минимума массива равна 0. Так как 0й элемент массива является самым минимальным числом." << endl;
+		cout << "РЎСѓРјРјР° РґРѕ РјРёРЅРёРјСѓРјР° РјР°СЃСЃРёРІР° СЂР°РІРЅР° 0. РўР°Рє РєР°Рє 0Р№ СЌР»РµРјРµРЅС‚ РјР°СЃСЃРёРІР° СЏРІР»СЏРµС‚СЃСЏ СЃР°РјС‹Рј РјРёРЅРёРјР°Р»СЊРЅС‹Рј С‡РёСЃР»РѕРј." << endl;
 
 	}
 
 	else
 	{
 
-		cout << "Сумма до минимума массива равна: " << sum << endl;
+		cout << "РЎСѓРјРјР° РґРѕ РјРёРЅРёРјСѓРјР° РјР°СЃСЃРёРІР° СЂР°РІРЅР°: " << sum << endl;
 
 	}
 
 	cout << endl;
 
-	cout << "Отсортированный массив(Отдельно по возрастанию для четных и нечетных):" << endl;
+	cout << "РћС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Р№ РјР°СЃСЃРёРІ(РћС‚РґРµР»СЊРЅРѕ РїРѕ РІРѕР·СЂР°СЃС‚Р°РЅРёСЋ РґР»СЏ С‡РµС‚РЅС‹С… Рё РЅРµС‡РµС‚РЅС‹С…):" << endl;
 	cout << endl;
 
 	for (int i = 0; i < arr_count; i++)
 	{
 
-		cout << i << "й эл.    " << arr_of_numbs[i] << endl;
+		cout << i << "Р№ СЌР».    " << arr_of_numbs[i] << endl;
 
 	}
 
@@ -325,17 +325,17 @@ int main()
 	double multiple = 0;
 	double sum = 0;
 
-	float* arr_of_numbs = f_input_arr(arr_len, arr_count);	//ВВод массива
+	float* arr_of_numbs = f_input_arr(arr_len, arr_count);	//Р’Р’РѕРґ РјР°СЃСЃРёРІР°
 
-	f_out_arr(arr_of_numbs, arr_count);						//Вывод в консоль введенного массива
+	f_out_arr(arr_of_numbs, arr_count);						//Р’С‹РІРѕРґ РІ РєРѕРЅСЃРѕР»СЊ РІРІРµРґРµРЅРЅРѕРіРѕ РјР°СЃСЃРёРІР°
 
-	multiple = f_positive_multi(arr_of_numbs, arr_count);	//Умножение положительных элементов
+	multiple = f_positive_multi(arr_of_numbs, arr_count);	//РЈРјРЅРѕР¶РµРЅРёРµ РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ
 
-	sum = f_sum_until_min(arr_of_numbs, arr_count);			//Сумма элементов до минимума массива
+	sum = f_sum_until_min(arr_of_numbs, arr_count);			//РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РґРѕ РјРёРЅРёРјСѓРјР° РјР°СЃСЃРёРІР°
 
-	f_sort(arr_of_numbs, arr_count);						//Функция сортировки массива
+	f_sort(arr_of_numbs, arr_count);						//Р¤СѓРЅРєС†РёСЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РјР°СЃСЃРёРІР°
 
-	f_output(arr_of_numbs, arr_count, sum, multiple);		//Функция вывода результатов
+	f_output(arr_of_numbs, arr_count, sum, multiple);		//Р¤СѓРЅРєС†РёСЏ РІС‹РІРѕРґР° СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ
 
 	delete[] arr_of_numbs;
 
